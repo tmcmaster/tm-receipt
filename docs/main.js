@@ -1,10 +1,10 @@
 import {html, render} from "./web_modules/lit-html.js";
 
 let sites = {
-    'src': 'https://github.com/tmcmaster/template-web-component',
-    'pika': 'https://www.pika.dev/npm/@wonkytech/template-web-component',
-    'npm': 'https://www.npmjs.com/package/@wonkytech/template-web-component',
-    'docs': 'https://github.com/tmcmaster/template-web-component#readme'
+    'src': 'https://github.com/tmcmaster/tm-receipt',
+    'pika': 'https://www.pika.dev/npm/@wonkytech/tm-receipt',
+    'npm': 'https://www.npmjs.com/package/@wonkytech/tm-receipt',
+    'docs': 'https://github.com/tmcmaster/tm-receipt#readme'
 };
 
 render(html`
@@ -14,9 +14,9 @@ render(html`
           margin: 0;
         } 
     </style>
-    <tm-examples heading="template-web-component" .sites="${sites}">
+    <tm-examples heading="tm-receipt" .sites="${sites}">
         <section title="Example">
-            <template-web-component></template-web-component>
+            <tm-receipt></tm-receipt>
         </section>
     </tm-examples>
 `, document.querySelector('body'));

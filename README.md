@@ -1,17 +1,17 @@
-# template-web-component
+# tm-receipt
 
 This is a template for creating new web component repositories.
 
 ## Installation
 ```bash
-npm install @wonkytech/template-web-component
+npm install @wonkytech/tm-receipt
 ```
 
 ## Usage
 ```html
 <script type="module">
-  import '@wonkytech/template-web-component';
+  import '@wonkytech/tm-receipt';
 </script>
 
-<template-web-component></template-web-component>
+<tm-receipt></tm-receipt>
 ```

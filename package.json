@@ -1,11 +1,11 @@
 {
-    "name": "@wonkytech/template-web-component",
+    "name": "@wonkytech/tm-receipt",
     "version": "0.0.3",
     "description": "This is a template for creating new web component repositories.",
     "author": "Tim McMaster",
-    "homepage": "https://tmcmaster.github.io/template-web-component",
+    "homepage": "https://tmcmaster.github.io/tm-receipt",
     "license": "MIT",
-    "repository": "https://github.com/tmcmaster/template-web-component",
+    "repository": "https://github.com/tmcmaster/tm-receipt",
     "pika": true,
     "sideEffects": true,
     "@pika/pack": {
