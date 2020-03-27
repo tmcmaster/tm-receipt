@@ -12,7 +12,7 @@ window.customElements.define('tm-receipt', class extends LitElement {
 
     constructor() {
         super();
-        this.heading = 'Hello World!';
+        this.heading = 'Hello Sage!';
     }
 
     static get styles() {
@@ -22,6 +22,7 @@ window.customElements.define('tm-receipt', class extends LitElement {
               display: inline-block;
             }
             h2 {
+                font-family: var(--tm-receipt-font-family, inherit);
                 color: gray;
             }
         `;

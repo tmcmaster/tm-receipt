@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "sage";
+    src: url('sage.woff') format('woff2');
+}
+
+@font-face {
+    font-family: "sage-bold";
+    src: url('sage-bold.woff') format('woff2');
+}

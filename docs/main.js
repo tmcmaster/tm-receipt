@@ -15,6 +15,10 @@ render(html`
           padding: 0;
           margin: 0;
         } 
+        
+        html {
+            --tm-receipt-font-family: sage;
+        }
     </style>
     <tm-examples heading="tm-receipt" .sites="${sites}">
         <section title="Example">
