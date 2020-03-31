@@ -30,9 +30,8 @@ window.customElements.define('tm-receipt', class extends LitElement {
                 font-family: var(--tm-receipt-font-family, inherit);
                 
                 --section-padding: var(--tm-receipt-section-padding, 20px);
-                --padding: var(--tm-receipt-padding, 20px);
                 
-                padding: var(--padding);
+                padding: var(--tm-receipt-padding, 20px 30px 20px 30px);
             }
 
             ul {
@@ -41,6 +40,7 @@ window.customElements.define('tm-receipt', class extends LitElement {
             section {
                 padding: var(--section-padding);
                 border: solid grey 1px;
+                margin-top: 20px;
             }
             
             section > h3 {

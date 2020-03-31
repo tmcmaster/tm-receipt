@@ -5,6 +5,6 @@
     },
     "dependencies": {
         "@wonkytech/tm-examples": "~0.1",
-        "@wonkytech/tm-receipt": "0.0.6"
+        "@wonkytech/tm-receipt": "0.0.7"
     }
 }
