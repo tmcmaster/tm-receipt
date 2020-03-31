@@ -40,6 +40,9 @@ npm install @wonkytech/tm-receipt
     }
 </script>
 ```
+
+- If a value in the above data contains more than 1 line, limited Markdown notation will be observed
+
 ## Style the receipt
 ```html
 <style>
