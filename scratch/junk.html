@@ -1,0 +1,260 @@
+<style>
+
+    :host {
+
+        --section-heading-color: var(--tm-receipt-section-heading-color, inherit);
+        --section-key-color: var(--tm-receipt-section-key-color, inherit);
+        --section-value-color: var(--tm-receipt-section-value-color, inherit);
+
+        --section-heading-1-color: var(--tm-receipt-section-heading-1-color, var(--section-heading-color));
+        --section-1-key-color: var(--tm-receipt-section-key-color, var(--section-key-color));
+        --section-1-value-color: var(--tm-receipt-section-value-color, var(--section-value-color));
+
+        --section-1-key-1-color: var(--tm-receipt-section-1-key-1-color, var(--section-1-key-color));
+        --section-1-value-1-color: var(--tm-receipt-section-1-value-1-color, var(--section-1-value-color));
+
+        --section-1-key-2-color: var(--tm-receipt-section-1-key-2-color, var(--section-1-key-color));
+        --section-1-value-2-color: var(--tm-receipt-section-1-value-2-color, var(--section-1-value-color));
+
+        --section-1-key-3-color: var(--tm-receipt-section-1-key-3-color, var(--section-1-key-color));
+        --section-1-value-3-color: var(--tm-receipt-section-1-value-3-color, var(--section-1-value-color));
+
+        --section-1-key-4-color: var(--tm-receipt-section-1-key-4-color, var(--section-1-key-color));
+        --section-1-value-4-color: var(--tm-receipt-section-1-value-4-color, var(--section-1-value-color));
+
+
+        --section-heading-2-color: var(--tm-receipt-section-heading-2-color, var(--section-heading-color));
+        --section-2-key-color: var(--tm-receipt-section-key-color, var(--section-key-color));
+        --section-2-value-color: var(--tm-receipt-section-value-color, var(--section-value-color));
+
+        --section-2-key-1-color: var(--tm-receipt-section-2-key-1-color, var(--section-2-key-color));
+        --section-2-value-1-color: var(--tm-receipt-section-2-value-1-color, var(--section-2-value-color));
+
+        --section-2-key-2-color: var(--tm-receipt-section-2-key-2-color, var(--section-2-key-color));
+        --section-2-value-2-color: var(--tm-receipt-section-2-value-2-color, var(--section-2-value-color));
+
+        --section-2-key-3-color: var(--tm-receipt-section-2-key-3-color, var(--section-2-key-color));
+        --section-2-value-3-color: var(--tm-receipt-section-2-value-3-color, var(--section-2-value-color));
+
+
+        --section-heading-font-size: var(--tm-receipt-section-heading-font-size, inherit);
+        --section-key-font-size: var(--tm-receipt-section-key-font-size, inherit);
+        --section-value-font-size: var(--tm-receipt-section-value-font-size, inherit);
+
+        --section-heading-1-font-size: var(--tm-receipt-section-heading-1-font-size, var(--section-heading-font-size));
+        --section-1-key-font-size: var(--tm-receipt-section-key-font-size, var(--section-key-font-size));
+        --section-1-value-font-size: var(--tm-receipt-section-value-font-size, var(--section-value-font-size));
+
+        --section-1-key-1-font-size: var(--tm-receipt-section-1-key-1-font-size, var(--section-1-key-font-size));
+        --section-1-value-1-font-size: var(--tm-receipt-section-1-value-1-font-size, var(--section-1-value-font-size));
+
+        --section-1-key-2-font-size: var(--tm-receipt-section-1-key-2-font-size, var(--section-1-key-font-size));
+        --section-1-value-2-font-size: var(--tm-receipt-section-1-value-2-font-size, var(--section-1-value-font-size));
+
+        --section-1-key-3-font-size: var(--tm-receipt-section-1-key-3-font-size, var(--section-1-key-font-size));
+        --section-1-value-3-font-size: var(--tm-receipt-section-1-value-3-font-size, var(--section-1-value-font-size));
+
+        --section-1-key-4-font-size: var(--tm-receipt-section-1-key-4-font-size, var(--section-1-key-font-size));
+        --section-1-value-4-font-size: var(--tm-receipt-section-1-value-4-font-size, var(--section-1-value-font-size));
+
+
+        --section-heading-2-font-size: var(--tm-receipt-section-heading-2-font-size, var(--section-heading-font-size));
+        --section-2-key-font-size: var(--tm-receipt-section-key-font-size, var(--section-key-font-size));
+        --section-2-value-font-size: var(--tm-receipt-section-value-font-size, var(--section-value-font-size));
+
+        --section-2-key-1-font-size: var(--tm-receipt-section-2-key-1-font-size, var(--section-2-key-font-size));
+        --section-2-value-1-font-size: var(--tm-receipt-section-2-value-1-font-size, var(--section-2-value-font-size));
+
+        --section-2-key-2-font-size: var(--tm-receipt-section-2-key-2-font-size, var(--section-2-key-font-size));
+        --section-2-value-2-font-size: var(--tm-receipt-section-2-value-2-font-size, var(--section-2-value-font-size));
+
+        --section-2-key-3-font-size: var(--tm-receipt-section-2-key-3-font-size, var(--section-2-key-font-size));
+        --section-2-value-3-font-size: var(--tm-receipt-section-2-value-3-font-size, var(--section-2-value-font-size));
+
+
+        --section-heading-font-weight: var(--tm-receipt-section-heading-font-weight, inherit);
+        --section-key-font-weight: var(--tm-receipt-section-key-font-weight, inherit);
+        --section-value-font-weight: var(--tm-receipt-section-value-font-weight, inherit);
+
+        --section-heading-1-font-weight: var(--tm-receipt-section-heading-1-font-weight, var(--section-heading-font-weight));
+        --section-1-key-font-weight: var(--tm-receipt-section-key-font-weight, var(--section-key-font-weight));
+        --section-1-value-font-weight: var(--tm-receipt-section-value-font-weight, var(--section-value-font-weight));
+
+        --section-1-key-1-font-weight: var(--tm-receipt-section-1-key-1-font-weight, var(--section-1-key-font-weight));
+        --section-1-value-1-font-weight: var(--tm-receipt-section-1-value-1-font-weight, var(--section-1-value-font-weight));
+
+        --section-1-key-2-font-weight: var(--tm-receipt-section-1-key-2-font-weight, var(--section-1-key-font-weight));
+        --section-1-value-2-font-weight: var(--tm-receipt-section-1-value-2-font-weight, var(--section-1-value-font-weight));
+
+        --section-1-key-3-font-weight: var(--tm-receipt-section-1-key-3-font-weight, var(--section-1-key-font-weight));
+        --section-1-value-3-font-weight: var(--tm-receipt-section-1-value-3-font-weight, var(--section-1-value-font-weight));
+
+        --section-1-key-4-font-weight: var(--tm-receipt-section-1-key-4-font-weight, var(--section-1-key-font-weight));
+        --section-1-value-4-font-weight: var(--tm-receipt-section-1-value-4-font-weight, var(--section-1-value-font-weight));
+
+
+        --section-heading-2-font-weight: var(--tm-receipt-section-heading-2-font-weight, var(--section-heading-font-weight));
+        --section-2-key-font-weight: var(--tm-receipt-section-key-font-weight, var(--section-key-font-weight));
+        --section-2-value-font-weight: var(--tm-receipt-section-value-font-weight, var(--section-value-font-weight));
+
+        --section-2-key-1-font-weight: var(--tm-receipt-section-2-key-1-font-weight, var(--section-2-key-font-weight));
+        --section-2-value-1-font-weight: var(--tm-receipt-section-2-value-1-font-weight, var(--section-2-value-font-weight));
+
+        --section-2-key-2-font-weight: var(--tm-receipt-section-2-key-2-font-weight, var(--section-2-key-font-weight));
+        --section-2-value-2-font-weight: var(--tm-receipt-section-2-value-2-font-weight, var(--section-2-value-font-weight));
+
+        --section-2-key-3-font-weight: var(--tm-receipt-section-2-key-3-font-weight, var(--section-2-key-font-weight));
+        --section-2-value-3-font-weight: var(--tm-receipt-section-2-value-3-font-weight, var(--section-2-value-font-weight));
+
+
+        --section-heading-font-style: var(--tm-receipt-section-heading-font-style, inherit);
+        --section-key-font-style: var(--tm-receipt-section-key-font-style, inherit);
+        --section-value-font-style: var(--tm-receipt-section-value-font-style, inherit);
+
+        --section-heading-1-font-style: var(--tm-receipt-section-heading-1-font-style, var(--section-heading-font-style));
+        --section-1-key-font-style: var(--tm-receipt-section-key-font-style, var(--section-key-font-style));
+        --section-1-value-font-style: var(--tm-receipt-section-value-font-style, var(--section-value-font-style));
+
+        --section-1-key-1-font-style: var(--tm-receipt-section-1-key-1-font-style, var(--section-1-key-font-style));
+        --section-1-value-1-font-style: var(--tm-receipt-section-1-value-1-font-style, var(--section-1-value-font-style));
+
+        --section-1-key-2-font-style: var(--tm-receipt-section-1-key-2-font-style, var(--section-1-key-font-style));
+        --section-1-value-2-font-style: var(--tm-receipt-section-1-value-2-font-style, var(--section-1-value-font-style));
+
+        --section-1-key-3-font-style: var(--tm-receipt-section-1-key-3-font-style, var(--section-1-key-font-style));
+        --section-1-value-3-font-style: var(--tm-receipt-section-1-value-3-font-style, var(--section-1-value-font-style));
+
+        --section-1-key-4-font-style: var(--tm-receipt-section-1-key-4-font-style, var(--section-1-key-font-style));
+        --section-1-value-4-font-style: var(--tm-receipt-section-1-value-4-font-style, var(--section-1-value-font-style));
+
+
+        --section-heading-2-font-style: var(--tm-receipt-section-heading-2-font-style, var(--section-heading-font-style));
+        --section-2-key-font-style: var(--tm-receipt-section-key-font-style, var(--section-key-font-style));
+        --section-2-value-font-style: var(--tm-receipt-section-value-font-style, var(--section-value-font-style));
+
+        --section-2-key-1-font-style: var(--tm-receipt-section-2-key-1-font-style, var(--section-2-key-font-style));
+        --section-2-value-1-font-style: var(--tm-receipt-section-2-value-1-font-style, var(--section-2-value-font-style));
+
+        --section-2-key-2-font-style: var(--tm-receipt-section-2-key-2-font-style, var(--section-2-key-font-style));
+        --section-2-value-2-font-style: var(--tm-receipt-section-2-value-2-font-style, var(--section-2-value-font-style));
+
+        --section-2-key-3-font-style: var(--tm-receipt-section-2-key-3-font-style, var(--section-2-key-font-style));
+        --section-2-value-3-font-style: var(--tm-receipt-section-2-value-3-font-style, var(--section-2-value-font-style));;
+    }
+
+
+    .section-heading-1 {
+        color: var(--section-heading-1-color, inherit);
+        font-size: var(--section-heading-1-font-size, inherit);
+        font-weight: var(--section-heading-1-font-weight, inherit);
+        font-style: var(--section-heading-1-font-style, inherit);
+    }
+
+    .section-1-key-1 {
+        color: var(--section-1-key-1-color, inherit);
+        font-size: var(--section-1-key-1-font-size, inherit);
+        font-weight: var(--section-1-key-1-font-weight, inherit);
+        font-style: var(--section-1-key-1-font-style, inherit);
+    }
+
+    .section-1-key-1 {
+        color: var(--section-1-value-1-color, inherit);
+        font-size: var(--section-1-value-1-font-size, inherit);
+        font-weight: var(--section-1-value-1-font-weight, inherit);
+        font-style: var(--section-1-value-1-font-style, inherit);
+    }
+
+    .section-1-key-2 {
+        color: var(--section-1-key-2-color, inherit);
+        font-size: var(--section-1-key-2-font-size, inherit);
+        font-weight: var(--section-1-key-2-font-weight, inherit);
+        font-style: var(--section-1-key-2-font-style, inherit);
+    }
+
+    .section-1-key-2 {
+        color: var(--section-1-value-2-color, inherit);
+        font-size: var(--section-1-value-2-font-size, inherit);
+        font-weight: var(--section-1-value-2-font-weight, inherit);
+        font-style: var(--section-1-value-2-font-style, inherit);
+    }
+
+    .section-1-key-3 {
+        color: var(--section-1-key-3-color, inherit);
+        font-size: var(--section-1-key-3-font-size, inherit);
+        font-weight: var(--section-1-key-3-font-weight, inherit);
+        font-style: var(--section-1-key-3-font-style, inherit);
+    }
+
+    .section-1-key-3 {
+        color: var(--section-1-value-3-color, inherit);
+        font-size: var(--section-1-value-3-font-size, inherit);
+        font-weight: var(--section-1-value-3-font-weight, inherit);
+        font-style: var(--section-1-value-3-font-style, inherit);
+    }
+
+    .section-1-key-4 {
+        color: var(--section-1-key-4-color, inherit);
+        font-size: var(--section-1-key-4-font-size, inherit);
+        font-weight: var(--section-1-key-4-font-weight, inherit);
+        font-style: var(--section-1-key-4-font-style, inherit);
+    }
+
+    .section-1-key-4 {
+        color: var(--section-1-value-4-color, inherit);
+        font-size: var(--section-1-value-4-font-size, inherit);
+        font-weight: var(--section-1-value-4-font-weight, inherit);
+        font-style: var(--section-1-value-4-font-style, inherit);
+    }
+
+
+    .section-heading-2 {
+        color: var(--section-heading-2-color, inherit);
+        font-size: var(--section-heading-2-font-size, inherit);
+        font-weight: var(--section-heading-2-font-weight, inherit);
+        font-style: var(--section-heading-2-font-style, inherit);
+    }
+
+    .section-2-key-1 {
+        color: var(--section-2-key-1-color, inherit);
+        font-size: var(--section-2-key-1-font-size, inherit);
+        font-weight: var(--section-2-key-1-font-weight, inherit);
+        font-style: var(--section-2-key-1-font-style, inherit);
+    }
+
+    .section-2-key-1 {
+        color: var(--section-2-value-1-color, inherit);
+        font-size: var(--section-2-value-1-font-size, inherit);
+        font-weight: var(--section-2-value-1-font-weight, inherit);
+        font-style: var(--section-2-value-1-font-style, inherit);
+    }
+
+    .section-2-key-2 {
+        color: var(--section-2-key-2-color, inherit);
+        font-size: var(--section-2-key-2-font-size, inherit);
+        font-weight: var(--section-2-key-2-font-weight, inherit);
+        font-style: var(--section-2-key-2-font-style, inherit);
+    }
+
+    .section-2-key-2 {
+        color: var(--section-2-value-2-color, inherit);
+        font-size: var(--section-2-value-2-font-size, inherit);
+        font-weight: var(--section-2-value-2-font-weight, inherit);
+        font-style: var(--section-2-value-2-font-style, inherit);
+    }
+
+    .section-2-key-3 {
+        color: var(--section-2-key-3-color, inherit);
+        font-size: var(--section-2-key-3-font-size, inherit);
+        font-weight: var(--section-2-key-3-font-weight, inherit);
+        font-style: var(--section-2-key-3-font-style, inherit);
+    }
+
+    .section-2-key-3 {
+        color: var(--section-2-value-3-color, inherit);
+        font-size: var(--section-2-value-3-font-size, inherit);
+        font-weight: var(--section-2-value-3-font-weight, inherit);
+        font-style: var(--section-2-value-3-font-style, inherit);
+    }
+
+
+</style>

@@ -16,6 +16,7 @@ window.customElements.define('tm-receipt', class extends LitElement {
         super();
         this.conv = new showdown.Converter({noHeaderId: true});
         this.template = document.createElement('template');
+        this.attrs = ['color', 'font-size', 'font-weight', 'font-style'];
     }
 
     static get styles() {
@@ -28,74 +29,44 @@ window.customElements.define('tm-receipt', class extends LitElement {
                 color: black;
                 font-family: var(--tm-receipt-font-family, inherit);
                 
-                /** Colors **/
+                --section-padding: var(--tm-receipt-section-padding, 20px);
+                --padding: var(--tm-receipt-padding, 20px);
                 
-                --section-heading-color: var(--tm-receipt-section-heading-color, inherit);
-                --section-key-color: var(--tm-receipt-section-key-color, inherit);
-                --section-value-color: var(--tm-receipt-section-value, inherit);
-
-                --section-1-key-color: var(--tm-receipt-section-key-color, var(--section-key-color));
-                --section-1-value-color: var(--tm-receipt-section-value, var(--section-value-color));
-
-                --section-heading-1-color: var(--tm-receipt-section-heading-1-color, var(--section-heading-color));
-                --section-heading-2-color: var(--tm-receipt-section-heading-2-color, var(--section-heading-color));
-                
-                --section-1-key-1-color: var(--tm-receipt-section-1-key-1-color, var(--section-1-key-color));
-                --section-1-key-2-color: var(--tm-receipt-section-1-key-2-color, var(--section-1-key-color));
-                --section-1-key-3-color: var(--tm-receipt-section-1-key-3-color, var(--section-1-key-color));
-
-                --section-1-value-1-color: var(--tm-receipt-section-1-value-1-color, var(--section-1-value-color));
-                --section-1-value-2-color: var(--tm-receipt-section-1-value-2-color, var(--section-1-value-color));
-                --section-1-value-3-color: var(--tm-receipt-section-1-value-3-color, var(--section-1-value-color));
-
-                --section-2-key-1-color: var(--tm-receipt-section-2-key-1-color, var(--section-2-key-color));
-                --section-2-key-2-color: var(--tm-receipt-section-2-key-2-color, var(--section-2-key-color));
-                --section-2-key-3-color: var(--tm-receipt-section-2-key-3-color, var(--section-2-key-color));
-
-                --section-2-value-1-color: var(--tm-receipt-section-2-value-1-color, var(--section-2-value-color));
-                --section-2-value-2-color: var(--tm-receipt-section-2-value-2-color, var(--section-2-value-color));
-                --section-2-value-3-color: var(--tm-receipt-section-2-value-3-color, var(--section-2-value-color));
-
+                padding: var(--padding);
             }
 
             ul {
                 list-style-type:none;
             }
             section {
-                padding: 20px;
+                padding: var(--section-padding);
                 border: solid grey 1px;
             }
+
+            table > tr > td:nth-of-type(1) {
+                width: 45%;
+            }
+            table > tr > td:nth-of-type(2) {
+                width: 55%;
+            }
             
-            .section-heading-1 {
-                color: var(--section-heading-1-color, inherit);
+            td {
+                border: solid red 1px;
             }
-            .section-heading-2 {
-                color: var(--section-heading-2-color, inherit);
-            }
-            .section-heading-3 {
-                color: var(--section-heading-3-color, inherit);
-            }
-
-            .section-1-key-1 {
-                color: var(--section-1-key-1-color, inherit);
-            }
-            .section-1-key-2 {
-                color: var(--section-1-key-2-color, inherit);
-            }
-
-            .section-1-value-1 {
-                color: var(--section-1-value-1-color, inherit);
-            }
-            .section-1-value-2 {
-                color: var(--section-1-value-2-color, inherit);
+            
+            ul {
+                padding: 0;
             }
         `;
     }
 
+    //                        --section-heading-${i}-color: var(--tm-receipt-section-heading-${i}-color, var(--section-heading-color));
     // noinspection JSUnusedGlobalSymbols
     render() {
         return html`
-            <template id="a"><h3>sdfasdfasf</h3></template>
+            <style>
+                ${this.generateDetailsStyles(this.data.details)}
+            </style>
             <header>
                 <img/>
                 <h1>${this.data.title}</h1>
@@ -122,6 +93,43 @@ window.customElements.define('tm-receipt', class extends LitElement {
                 `)}
                 <footer>${this.data.footer}</footer>
             </main>
+        `;
+    }
+
+    generateDetailsStyles(details) {
+        const {attrs} = this;
+
+        return `
+            :host { 
+                ${attrs.map((attr) => `
+                    --section-heading-${attr}: var(--tm-receipt-section-heading-${attr}, inherit);
+                    --section-key-${attr}: var(--tm-receipt-section-key-${attr}, inherit);
+                    --section-value-${attr}: var(--tm-receipt-section-value-${attr}, inherit);
+                    ${Object.keys(details).map((section, s) => `
+                        --section-heading-${s+1}-${attr}: var(--tm-receipt-section-heading-${s+1}-${attr}, var(--section-heading-${attr}));
+                        --section-${s+1}-key-${attr}: var(--tm-receipt-section-key-${attr}, var(--section-key-${attr}));
+                        --section-${s+1}-value-${attr}: var(--tm-receipt-section-value-${attr}, var(--section-value-${attr}));
+                        ${Object.keys(this.data.details[section]).map((key,k) => `
+                            --section-${s+1}-key-${k+1}-${attr}: var(--tm-receipt-section-${s+1}-key-${k+1}-${attr}, var(--section-${s+1}-key-${attr}));
+                            --section-${s+1}-value-${k+1}-${attr}: var(--tm-receipt-section-${s+1}-value-${k+1}-${attr}, var(--section-${s+1}-value-${attr}));
+                        `).join('')}
+                    `).join('')}
+                `).join('')};
+            }
+            
+            ${Object.keys(details).map((section, s) => `
+                .section-heading-${s+1} {
+                    ${attrs.map(attr => `${attr}: var(--section-heading-${s+1}-${attr}, inherit);`).join('')}  
+                }
+                ${Object.keys(this.data.details[section]).map((key,k) => `
+                    .section-${s+1}-key-${k+1} {
+                        ${attrs.map(attr => `${attr}: var(--section-${s+1}-key-${k+1}-${attr}, inherit);`).join('')}  
+                    }
+                    .section-${s+1}-key-${k+1} {
+                        ${attrs.map(attr => `${attr}: var(--section-${s+1}-value-${k+1}-${attr}, inherit);`).join('')}  
+                    }
+                `).join('')}
+            `).join('')}
         `;
     }
 

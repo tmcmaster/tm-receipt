@@ -38,9 +38,9 @@ const data = {
             'Sage Details': sageDetails
         },
         'Payment Details': {
-            '10-min minimum rate': '**A$40.00**',
-            'Every 1 min after': '**A$4.00**',
-            '**TOTAL**': '**A$56.00**'
+            '10-min minimum rate': 'A$40.00',
+            'Every 1 min after': 'A$4.00',
+            'TOTAL': 'A$56.00'
         }
     },
     footer: 'Thank you'
@@ -65,25 +65,28 @@ render(html`
             width: 500px;
 
         }
+
     </style>
     <tm-examples heading="tm-receipt" .sites="${sites}">
-        <section title="Example">
+        <section title="Receipt">
             <style>
                 tm-receipt {
+                    --tm-receipt-padding: 20px 30px 20px 30px;
+                    
                     --tm-receipt-font-family: sage;
                     --tm-receipt-color: rgb(16,25,64);
                     --tm-receipt-section-heading-color: red;
-                    --tm-receipt-section-heading-1-color: blue;
+                    --tm-receipt-section-heading-1-color: purple;
                     
-                    --tm-receipt-section-1-key-1-color: green;
-                    --tm-receipt-section-1-key-2-color: purple;
-                    
+                    --tm-receipt-section-1-key-1-color: blue;
                     --tm-receipt-section-1-value-1-color: red;
-                    --tm-receipt-section-1-value-2-color: orange;
+
                 }
             </style>
-            <textarea id="markdown">${JSON.stringify(data, null, ' ')}</textarea>
             <tm-receipt .data="${data}"></tm-receipt>
+        </section>
+        <section title="JSON Data">
+            <textarea id="markdown">${JSON.stringify(data, null, ' ')}</textarea>
         </section>
     </tm-examples>
     
