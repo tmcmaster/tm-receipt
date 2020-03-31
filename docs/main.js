@@ -25,8 +25,8 @@ Consultant
 `;
 
 const data = {
-    title: 'Sage.fm',
-    subtitle1: 'Sage.fm Pty Ltd',
+    title: 'Company',
+    subtitle1: 'Company Pty Ltd',
     subtitle2: 'ABN 11 222 333 444',
     heading: 'Conversation Receipt',
     subHeading: 'Jack Jones',
@@ -76,11 +76,20 @@ render(html`
                     --tm-receipt-font-family: sage;
                     --tm-receipt-color: rgb(16,25,64);
                     --tm-receipt-section-heading-color: red;
-                    --tm-receipt-section-heading-1-color: purple;
+                    --tm-receipt-section-heading-1-color: black;
+                    --tm-receipt-section-heading-2-color: red;
+                    --tm-receipt-section-heading-font-size: 30px;
+                    --tm-receipt-section-heading-font-face: sage-bold;
+                    --tm-receipt-section-heading-font-wight: bold;
                     
-                    --tm-receipt-section-1-key-1-color: blue;
                     --tm-receipt-section-1-value-1-color: red;
+                    --tm-receipt-section-1-key-1-color: blue;
 
+                    --tm-receipt-section-2-value-font-family: sage-bold;
+                    --tm-receipt-section-2-value-font-weight: bold;
+                    
+                    --tm-receipt-section-2-key-3-font-family: sage-bold;
+                    --tm-receipt-section-2-key-3-font-weight: bold;
                 }
             </style>
             <tm-receipt .data="${data}"></tm-receipt>

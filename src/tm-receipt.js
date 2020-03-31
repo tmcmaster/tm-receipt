@@ -16,7 +16,7 @@ window.customElements.define('tm-receipt', class extends LitElement {
         super();
         this.conv = new showdown.Converter({noHeaderId: true});
         this.template = document.createElement('template');
-        this.attrs = ['color', 'font-size', 'font-weight', 'font-style'];
+        this.attrs = ['color', 'font-size', 'font-weight', 'font-style', 'font-family'];
     }
 
     static get styles() {
@@ -42,20 +42,60 @@ window.customElements.define('tm-receipt', class extends LitElement {
                 padding: var(--section-padding);
                 border: solid grey 1px;
             }
-
+            
+            section > h3 {
+                margin: 0
+            }
+            table {
+                width: 100%;
+            }
             table > tr > td:nth-of-type(1) {
-                width: 45%;
+                width: 40%;
             }
             table > tr > td:nth-of-type(2) {
-                width: 55%;
+                width: 60%;
             }
             
             td {
-                border: solid red 1px;
+                //border: solid red 1px;
+                vertical-align: top;
+                border-top: solid gray 1px;
             }
             
             ul {
                 padding: 0;
+            }
+            
+            td.markdown > h1 {
+                margin: 0px 0px 0px 0px;
+            }
+            td.markdown > p {
+                margin-top: 0;
+            }
+            header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            header > h1 {
+                font-size: 50px;
+                margin: 0;
+            }
+            header > div {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            main > h2 {
+                margin: 0;
+            }
+            
+            main > h3 {
+                margin: 0;
+            }
+            
+            footer {
+                margin-top: 20px;
             }
         `;
     }
@@ -68,7 +108,6 @@ window.customElements.define('tm-receipt', class extends LitElement {
                 ${this.generateDetailsStyles(this.data.details)}
             </style>
             <header>
-                <img/>
                 <h1>${this.data.title}</h1>
                 <div>
                     <span>${this.data.subtitle1}</span>
@@ -84,8 +123,8 @@ window.customElements.define('tm-receipt', class extends LitElement {
                         <table>
                             ${Object.keys(this.data.details[key]).map((k,j) => html`
                                 <tr>
-                                    <td class="section-${i+1}-key-${j+1}">${this.formatText(k)}</td>
-                                    <td class="section-${i+1}-value-${j+1}">${this.formatText(this.data.details[key][k])}</td>
+                                    <td class="section-${i+1}-key-${j+1}">${k}</td>
+                                    <td class="section-${i+1}-value-${j+1} ${(this.isMarkdown(this.data.details[key][k]) ? 'markdown' : '')}">${this.formatText(this.data.details[key][k])}</td>
                                 </tr>
                             `)}
                         </table>
@@ -107,8 +146,8 @@ window.customElements.define('tm-receipt', class extends LitElement {
                     --section-value-${attr}: var(--tm-receipt-section-value-${attr}, inherit);
                     ${Object.keys(details).map((section, s) => `
                         --section-heading-${s+1}-${attr}: var(--tm-receipt-section-heading-${s+1}-${attr}, var(--section-heading-${attr}));
-                        --section-${s+1}-key-${attr}: var(--tm-receipt-section-key-${attr}, var(--section-key-${attr}));
-                        --section-${s+1}-value-${attr}: var(--tm-receipt-section-value-${attr}, var(--section-value-${attr}));
+                        --section-${s+1}-key-${attr}: var(--tm-receipt-section-${s+1}-key-${attr}, var(--section-key-${attr}));
+                        --section-${s+1}-value-${attr}: var(--tm-receipt-section-${s+1}-value-${attr}, var(--section-value-${attr}));
                         ${Object.keys(this.data.details[section]).map((key,k) => `
                             --section-${s+1}-key-${k+1}-${attr}: var(--tm-receipt-section-${s+1}-key-${k+1}-${attr}, var(--section-${s+1}-key-${attr}));
                             --section-${s+1}-value-${k+1}-${attr}: var(--tm-receipt-section-${s+1}-value-${k+1}-${attr}, var(--section-${s+1}-value-${attr}));
@@ -125,7 +164,7 @@ window.customElements.define('tm-receipt', class extends LitElement {
                     .section-${s+1}-key-${k+1} {
                         ${attrs.map(attr => `${attr}: var(--section-${s+1}-key-${k+1}-${attr}, inherit);`).join('')}  
                     }
-                    .section-${s+1}-key-${k+1} {
+                    .section-${s+1}-value-${k+1} {
                         ${attrs.map(attr => `${attr}: var(--section-${s+1}-value-${k+1}-${attr}, inherit);`).join('')}  
                     }
                 `).join('')}
@@ -133,10 +172,18 @@ window.customElements.define('tm-receipt', class extends LitElement {
         `;
     }
 
+    isMarkdown(text) {
+        return (text.indexOf('\n') > -1);
+    }
+
     formatText(text) {
-        const htmlString = this.conv.makeHtml(text.replace(/~blank~/gi, '<p></p>'));
-        this.template = document.createElement('template');
-        this.template.innerHTML = htmlString;
-        return this.template.content;
+        if (this.isMarkdown(text)) {
+            const htmlString = this.conv.makeHtml(text.replace(/~blank~/gi, '<p></p>'));
+            this.template = document.createElement('template');
+            this.template.innerHTML = htmlString;
+            return this.template.content;
+        } else {
+            return text;
+        }
     }
 });
