@@ -82,9 +82,6 @@ render(html`
                     --tm-receipt-section-heading-font-face: sage-bold;
                     --tm-receipt-section-heading-font-wight: bold;
                     
-                    --tm-receipt-section-1-value-1-color: red;
-                    --tm-receipt-section-1-key-1-color: blue;
-
                     --tm-receipt-section-2-value-font-family: sage-bold;
                     --tm-receipt-section-2-value-font-weight: bold;
                     
