@@ -71,10 +71,11 @@ render(html`
         <section title="Receipt">
             <style>
                 tm-receipt {
-                    --tm-receipt-padding: 20px 30px 20px 30px;
+                    --tm-receipt-padding: 30px 50px 30px 50px;
                     
                     --tm-receipt-font-family: sage;
                     --tm-receipt-color: rgb(16,25,64);
+                    
                     --tm-receipt-section-heading-color: red;
                     --tm-receipt-section-heading-1-color: black;
                     --tm-receipt-section-heading-2-color: red;
