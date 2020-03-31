@@ -42,7 +42,10 @@ npm install @wonkytech/tm-receipt
 ```
 
 - If a value in the above data contains more than 1 line, limited Markdown notation will be observed
-
+- the details section of the data is a map of maps.
+  - the top level map is the sections on the receipt
+  - the sub maps are the details in the section.
+  
 ## Style the receipt
 ```html
 <style>
