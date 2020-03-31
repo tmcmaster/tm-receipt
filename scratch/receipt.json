@@ -1,0 +1,18 @@
+{
+    "heading": "Conversation Receipt",
+    "subHeading": "Jack Jones",
+    "details": {
+        "Conversation Details": {
+            "Date": "2020-03-19T00:00:00.000Z",
+            "Time": "17.22pm",
+            "Conversation Length": "0:13:28secs",
+            "Sage Details": "#Susan Smith Consultant - ABN: 11 222 333 444 - IBCLC: L-12345 ~blank~ - Medicare Provider Number: 123456A ~blank~ - Health Fund Reference Numbers: ~blank~\n    - Medibank: 123456B\n    - Bupa: 123456C\n    - NIB: 123456D\n    - HCF: 123456E\n"
+        },
+        "Payment Details": {
+            "10-min minimum rate": "A$40.00",
+            "Every 1 min after": "A$4.00",
+            "TOTAL": "A$56.00"
+        }
+    },
+    "footer": "Thankyou"
+}
