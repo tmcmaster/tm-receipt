@@ -1,8 +1,6 @@
 import {html} from 'lit-html';
 import {LitElement, css} from 'lit-element';
 
-import {htmlLiteral} from 'https://unpkg.com/@polymer/polymer@3.0.5/lib/utils/html-tag.js'
-
 window.customElements.define('tm-receipt', class extends LitElement {
 
     // noinspection JSUnusedGlobalSymbols
